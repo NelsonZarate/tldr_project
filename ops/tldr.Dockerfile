@@ -4,25 +4,32 @@ from ubuntu:latest
 env DEBIAN_FRONTEND=noninteractive 
 env TZ=Etc/UTC
 
+env A=5
+env B=7
+
 run apt update -y
 
 #instala o tldr
-run apt install -y tldr
+#run apt install -y tldr
 
 #cria uma pasta chamada share
-run mkdir -p /root/.local/share 
+#run mkdir -p /root/.local/share 
 
 #atualiza o tldr
-run tldr -u
+#run tldr -u
 
 #instala o vim
-run apt install -y vim
+#run apt install -y vim
 
+#workdir
+workdir /home/ubuntu/script
 #copiar o script para dentro da imagem
-copy ./script.sh /home/ubuntu/script.sh
+#copy ./script.sh . "/home/ubuntu/script"
+copy ./script-projects/sub_command.sh .
 # cmd ["tldr","docker"]
 #entrypoint ["tldr"]
 
-cmd["bash"]
+cmd ["bash"]
+#entrypoint["bash"]
 
 
