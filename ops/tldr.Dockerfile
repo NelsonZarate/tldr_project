@@ -25,7 +25,8 @@ run apt update -y
 workdir /home/ubuntu/script
 #copiar o script para dentro da imagem
 #copy ./script.sh . "/home/ubuntu/script"
-copy ./script-projects/sub_command.sh .
+copy ./script-projects/script.sh .
+run chmod u+x script.sh
 # cmd ["tldr","docker"]
 #entrypoint ["tldr"]
 
