@@ -2,21 +2,11 @@
 build: ##build sem nome so com tag
 	docker build -t tldr .
 
-build-fe:##build com tag e nome
-	docker build -t app-fe -f fe.Dockerfile .
-
-build-be:##build com tag e nome
-	docker build -t app-be -f be.Dockerfile .
-
-
 run:##correr o programa
-	docker run -it app
-
-run-fe:## run com o nome do programa
-	docker run -it app-fe
+	docker run -it tldr
 
 bash: ## mostra o bash 
-	docker run -it app-fe bash
+	docker run -it tldr bash
 
 .PHONY:help
 #@ Utility
